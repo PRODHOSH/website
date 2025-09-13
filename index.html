@@ -4,34 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathematics Club VIT Chennai - Where Numbers Come Alive</title>
-    <link rel="icon" href="mathematics-club-logo.jpg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Floating Mathematical Symbols Background -->
-    <div class="floating-symbols">
-        <span class="symbol" style="top: 10%; left: 10%; animation-delay: 0s;">π</span>
-        <span class="symbol" style="top: 20%; right: 15%; animation-delay: 1s;">∑</span>
-        <span class="symbol" style="top: 70%; left: 5%; animation-delay: 2s;">∫</span>
-        <span class="symbol" style="bottom: 20%; right: 10%; animation-delay: 3s;">√</span>
-        <span class="symbol" style="top: 40%; left: 80%; animation-delay: 4s;">∞</span>
-        <span class="symbol" style="bottom: 40%; left: 20%; animation-delay: 5s;">α</span>
-        <span class="symbol" style="top: 60%; right: 30%; animation-delay: 6s;">β</span>
-        <span class="symbol" style="bottom: 10%; left: 60%; animation-delay: 7s;">θ</span>
+    <!-- Enhanced Floating Mathematical Symbols Background -->
+    <div class="floating-symbols" id="floatingSymbols">
+        <span class="symbol bounce-symbol" style="top: 5%; left: 8%; animation-delay: 0s;" data-symbol="π">π</span>
+        <span class="symbol spiral-symbol" style="top: 15%; right: 12%; animation-delay: 1s;" data-symbol="∑">∑</span>
+        <span class="symbol zigzag-symbol" style="top: 25%; left: 20%; animation-delay: 2s;" data-symbol="∫">∫</span>
+        <span class="symbol circular-symbol" style="top: 35%; right: 8%; animation-delay: 3s;" data-symbol="√">√</span>
+        <span class="symbol linear-symbol" style="top: 45%; left: 85%; animation-delay: 4s;" data-symbol="∞">∞</span>
+        <span class="symbol bounce-symbol" style="bottom: 45%; left: 15%; animation-delay: 5s;" data-symbol="α">α</span>
+        <span class="symbol spiral-symbol" style="top: 55%; right: 25%; animation-delay: 6s;" data-symbol="β">β</span>
+        <span class="symbol zigzag-symbol" style="bottom: 35%; left: 75%; animation-delay: 7s;" data-symbol="θ">θ</span>
+        <span class="symbol circular-symbol" style="top: 65%; left: 40%; animation-delay: 8s;" data-symbol="δ">δ</span>
+        <span class="symbol linear-symbol" style="bottom: 25%; right: 35%; animation-delay: 9s;" data-symbol="λ">λ</span>
+        <span class="symbol bounce-symbol" style="top: 75%; left: 10%; animation-delay: 10s;" data-symbol="φ">φ</span>
+        <span class="symbol spiral-symbol" style="bottom: 15%; right: 20%; animation-delay: 11s;" data-symbol="ψ">ψ</span>
+        <span class="symbol zigzag-symbol" style="top: 85%; right: 45%; animation-delay: 12s;" data-symbol="∂">∂</span>
+        <span class="symbol circular-symbol" style="bottom: 55%; left: 55%; animation-delay: 13s;" data-symbol="∇">∇</span>
+        <span class="symbol linear-symbol" style="top: 12%; left: 60%; animation-delay: 14s;" data-symbol="≈">≈</span>
+        <span class="symbol bounce-symbol" style="bottom: 8%; left: 30%; animation-delay: 15s;" data-symbol="≠">≠</span>
+        <span class="symbol spiral-symbol" style="top: 28%; right: 55%; animation-delay: 16s;" data-symbol="≤">≤</span>
+        <span class="symbol zigzag-symbol" style="bottom: 65%; right: 10%; animation-delay: 17s;" data-symbol="≥">≥</span>
+        <span class="symbol circular-symbol" style="top: 48%; left: 2%; animation-delay: 18s;" data-symbol="±">±</span>
+        <span class="symbol linear-symbol" style="bottom: 12%; right: 60%; animation-delay: 19s;" data-symbol="×">×</span>
+        <span class="symbol bounce-symbol" style="top: 82%; right: 18%; animation-delay: 20s;" data-symbol="÷">÷</span>
+        <span class="symbol spiral-symbol" style="top: 38%; left: 95%; animation-delay: 21s;" data-symbol="∆">∆</span>
+        <span class="symbol zigzag-symbol" style="bottom: 40%; right: 85%; animation-delay: 22s;" data-symbol="Ω">Ω</span>
+        <span class="symbol circular-symbol" style="top: 58%; right: 5%; animation-delay: 23s;" data-symbol="ε">ε</span>
+        <span class="symbol linear-symbol" style="bottom: 70%; left: 65%; animation-delay: 24s;" data-symbol="μ">μ</span>
     </div>
+
+    <!-- Theme Transition Overlay -->
+    <div class="theme-transition-overlay" id="themeOverlay"></div>
 
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo" role="button" tabindex="0">
-                    <div class="logo-container">
-                        <img src="mathematics-club-logo.jpg" alt="Mathematics Club Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-                        <span class="logo-symbol" style="display: none;">∞</span>
-                    </div>
+                <div class="logo static-logo">
+                    <img src="mathematics club logo.jpeg" alt="MathClub Logo" class="logo">
                     <span class="logo-text">MathClub</span>
                 </div>
                 <nav class="nav">
@@ -42,8 +58,12 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </nav>
                 <div class="theme-toggle">
-                    <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
-                        <span class="theme-icon">🌙</span>
+                    <button class="theme-btn enhanced-toggle" id="themeToggle">
+                        <div class="toggle-track">
+                            <div class="toggle-thumb">
+                                <span class="theme-icon">🌙</span>
+                            </div>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -54,9 +74,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-logo">
-                <div class="logo-circle">
-                    <img src="mathematics-club-logo.jpg" alt="Mathematics Club Logo" class="hero-logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="hero-logo-symbol" style="display: none;">∞</span>
+                <div class="logo-circle static-hero-logo">
+                    <img src="mathematics club logo.jpeg" alt="MathClub Logo" class="navbar-logo">
                 </div>
             </div>
             <h1 class="hero-title">Mathematics Club VIT Chennai</h1>
@@ -65,15 +84,15 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about scroll-reveal">
         <div class="container">
             <h2 class="section-title">About Our Club</h2>
             <div class="about-content">
-                <div class="about-card glass-card">
+                <div class="about-card glass-card enhanced-card">
                     <h3>Our Vision</h3>
                     <p>Bridging the gap between theoretical mathematics and real-world applications through collaborative learning and innovation.</p>
                 </div>
-                <div class="about-card glass-card">
+                <div class="about-card glass-card enhanced-card">
                     <h3>Our Mission</h3>
                     <p>To foster a love for mathematics and create a community of mathematical thinkers and problem solvers.</p>
                 </div>
@@ -82,7 +101,7 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="team">
+    <section id="team" class="team scroll-reveal">
         <div class="container">
             <h2 class="section-title">Meet Our Team</h2>
             
@@ -90,28 +109,28 @@
             <div class="team-leads">
                 <h3 class="subsection-title">Leadership Team</h3>
                 <div class="team-leads-grid">
-                    <div class="team-card glass-card lead-card" data-member-id="1" role="button" tabindex="0">
+                    <div class="team-card glass-card lead-card enhanced-team-card" data-member-id="1">
                         <div class="team-card-front">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Arjun Sharma" class="team-image">
                             <h4 class="team-name">Arjun Sharma</h4>
                             <p class="team-role">President</p>
                         </div>
                     </div>
-                    <div class="team-card glass-card lead-card" data-member-id="2" role="button" tabindex="0">
+                    <div class="team-card glass-card lead-card enhanced-team-card" data-member-id="2">
                         <div class="team-card-front">
                             <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5c2?w=300&h=300&fit=crop&crop=face" alt="Priya Patel" class="team-image">
                             <h4 class="team-name">Priya Patel</h4>
                             <p class="team-role">Vice President</p>
                         </div>
                     </div>
-                    <div class="team-card glass-card lead-card" data-member-id="3" role="button" tabindex="0">
+                    <div class="team-card glass-card lead-card enhanced-team-card" data-member-id="3">
                         <div class="team-card-front">
                             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Rahul Kumar" class="team-image">
                             <h4 class="team-name">Rahul Kumar</h4>
                             <p class="team-role">Secretary</p>
                         </div>
                     </div>
-                    <div class="team-card glass-card lead-card" data-member-id="4" role="button" tabindex="0">
+                    <div class="team-card glass-card lead-card enhanced-team-card" data-member-id="4">
                         <div class="team-card-front">
                             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face" alt="Sneha Reddy" class="team-image">
                             <h4 class="team-name">Sneha Reddy</h4>
@@ -125,14 +144,14 @@
             <div class="team-members">
                 <h3 class="subsection-title">Core Members</h3>
                 <div class="team-members-grid">
-                    <div class="team-card glass-card" data-member-id="5" role="button" tabindex="0">
+                    <div class="team-card glass-card enhanced-team-card" data-member-id="5">
                         <div class="team-card-front">
                             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face" alt="Karthik Iyer" class="team-image">
                             <h4 class="team-name">Karthik Iyer</h4>
                             <p class="team-role">Event Coordinator</p>
                         </div>
                     </div>
-                    <div class="team-card glass-card" data-member-id="6" role="button" tabindex="0">
+                    <div class="team-card glass-card enhanced-team-card" data-member-id="6">
                         <div class="team-card-front">
                             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face" alt="Ananya Singh" class="team-image">
                             <h4 class="team-name">Ananya Singh</h4>
@@ -145,34 +164,34 @@
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="events">
+    <section id="events" class="events scroll-reveal">
         <div class="container">
             <h2 class="section-title">Events</h2>
             
             <!-- Event Tabs -->
             <div class="event-tabs">
-                <button class="tab-btn active" data-tab="upcoming">Upcoming Events</button>
-                <button class="tab-btn" data-tab="past">Past Events</button>
+                <button class="tab-btn active enhanced-tab" data-tab="upcoming">Upcoming Events</button>
+                <button class="tab-btn enhanced-tab" data-tab="past">Past Events</button>
             </div>
 
             <!-- Upcoming Events -->
             <div class="events-content tab-content active" id="upcoming">
                 <div class="events-grid">
-                    <div class="event-card glass-card">
+                    <div class="event-card glass-card enhanced-card">
                         <h3>Mathematical Modeling Workshop</h3>
                         <div class="event-date">September 20, 2025 | 2:00 PM - 5:00 PM</div>
                         <p>Learn to apply mathematical concepts to real-world problems through hands-on modeling exercises.</p>
                         <div class="event-venue">📍 Mathematics Department, VIT Chennai</div>
-                        <button class="btn btn--primary register-btn" data-event="1">Register Now</button>
+                        <button class="btn btn--primary register-btn enhanced-btn" data-event="1">Register Now</button>
                     </div>
-                    <div class="event-card glass-card">
+                    <div class="event-card glass-card enhanced-card">
                         <h3>Pi Day Celebration</h3>
                         <div class="event-date">March 14, 2025 | 10:00 AM - 4:00 PM</div>
                         <p>Annual celebration of Pi with competitions, presentations, and mathematical fun activities.</p>
                         <div class="event-venue">📍 Main Auditorium</div>
-                        <button class="btn btn--primary register-btn" data-event="2">Register Now</button>
+                        <button class="btn btn--primary register-btn enhanced-btn" data-event="2">Register Now</button>
                     </div>
-                    <div class="event-card glass-card">
+                    <div class="event-card glass-card enhanced-card">
                         <h3>Guest Lecture: Advanced Calculus</h3>
                         <div class="event-date">September 25, 2025 | 4:00 PM - 6:00 PM</div>
                         <p>Distinguished professor will discuss recent developments in multivariable calculus and applications.</p>
@@ -185,13 +204,13 @@
             <!-- Past Events -->
             <div class="events-content tab-content" id="past">
                 <div class="events-grid">
-                    <div class="event-card glass-card">
+                    <div class="event-card glass-card enhanced-card">
                         <h3>Math Olympiad 2025</h3>
                         <div class="event-date">August 15, 2025</div>
                         <p>Inter-collegiate mathematics competition with 200+ participants.</p>
                         <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop" alt="Math Olympiad" class="event-image">
                     </div>
-                    <div class="event-card glass-card">
+                    <div class="event-card glass-card enhanced-card">
                         <h3>Statistics Workshop</h3>
                         <div class="event-date">July 10, 2025</div>
                         <p>Introduction to statistical analysis and data interpretation techniques.</p>
@@ -203,46 +222,46 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact scroll-reveal">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-form-container">
-                    <form class="contact-form glass-card">
+                    <form class="contact-form glass-card enhanced-card">
                         <h3>Send us a Message</h3>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                            <input type="text" class="form-control enhanced-input" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                            <input type="email" class="form-control enhanced-input" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control enhanced-input" rows="5" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                        <button type="submit" class="btn btn--primary btn--full-width enhanced-btn">Send Message</button>
                     </form>
                 </div>
                 
                 <div class="contact-info">
-                    <div class="newsletter glass-card">
+                    <div class="newsletter glass-card enhanced-card">
                         <h3>Stay Updated</h3>
                         <p>Get the latest updates about our events and activities</p>
                         <form class="newsletter-form">
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
-                            <button type="submit" class="btn btn--primary">Subscribe</button>
+                            <input type="email" class="form-control enhanced-input" placeholder="Enter your email" required>
+                            <button type="submit" class="btn btn--primary enhanced-btn">Subscribe</button>
                         </form>
                     </div>
                     
-                    <div class="social-links glass-card">
+                    <div class="social-links glass-card enhanced-card">
                         <h3>Connect With Us</h3>
                         <div class="social-grid">
-                            <a href="https://instagram.com/mathclub_vitchennai" target="_blank" class="social-link instagram">
+                            <a href="https://instagram.com/mathclub_vitchennai" target="_blank" class="social-link instagram enhanced-social">
                                 <span>📷</span> Instagram
                             </a>
-                            <a href="https://linkedin.com/company/mathclub-vitchennai" target="_blank" class="social-link linkedin">
+                            <a href="https://linkedin.com/company/mathclub-vitchennai" target="_blank" class="social-link linkedin enhanced-social">
                                 <span>💼</span> LinkedIn
                             </a>
-                            <a href="mailto:mathclub@vitchennai.ac.in" class="social-link email">
+                            <a href="mailto:mathclub@vitchennai.ac.in" class="social-link email enhanced-social">
                                 <span>📧</span> Email
                             </a>
                         </div>
@@ -274,25 +293,25 @@
 
     <!-- Modals -->
     <!-- Registration Modal -->
-    <div class="modal hidden" id="registrationModal">
+    <div class="modal hidden enhanced-modal" id="registrationModal">
         <div class="modal-overlay"></div>
-        <div class="modal-content glass-card">
+        <div class="modal-content glass-card enhanced-modal-content">
             <div class="modal-header">
                 <h3>Event Registration</h3>
-                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <button class="modal-close enhanced-close">&times;</button>
             </div>
             <form class="registration-form">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Full Name" required>
+                    <input type="text" class="form-control enhanced-input" placeholder="Full Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" required>
+                    <input type="email" class="form-control enhanced-input" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" class="form-control" placeholder="Phone Number" required>
+                    <input type="tel" class="form-control enhanced-input" placeholder="Phone Number" required>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" required>
+                    <select class="form-control enhanced-input" required>
                         <option value="">Select Year</option>
                         <option value="1st">1st Year</option>
                         <option value="2nd">2nd Year</option>
@@ -301,20 +320,20 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Branch" required>
+                    <input type="text" class="form-control enhanced-input" placeholder="Branch" required>
                 </div>
-                <button type="submit" class="btn btn--primary btn--full-width">Register</button>
+                <button type="submit" class="btn btn--primary btn--full-width enhanced-btn">Register</button>
             </form>
         </div>
     </div>
 
     <!-- Team Member Modal -->
-    <div class="modal hidden" id="memberModal">
+    <div class="modal hidden enhanced-modal" id="memberModal">
         <div class="modal-overlay"></div>
-        <div class="modal-content glass-card">
+        <div class="modal-content glass-card enhanced-modal-content">
             <div class="modal-header">
                 <h3 id="memberName">Member Name</h3>
-                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <button class="modal-close enhanced-close">&times;</button>
             </div>
             <div class="member-details">
                 <img id="memberImage" src="" alt="" class="member-modal-image">
@@ -322,8 +341,8 @@
                     <p class="member-role" id="memberRole">Role</p>
                     <p class="member-bio" id="memberBio">Bio</p>
                     <div class="member-social">
-                        <a href="#" id="memberLinkedIn" target="_blank" class="social-link linkedin">LinkedIn</a>
-                        <a href="#" id="memberEmail" class="social-link email">Email</a>
+                        <a href="#" id="memberLinkedIn" target="_blank" class="social-link linkedin enhanced-social">LinkedIn</a>
+                        <a href="#" id="memberEmail" class="social-link email enhanced-social">Email</a>
                     </div>
                 </div>
             </div>
