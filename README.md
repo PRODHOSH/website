@@ -1,1 +1,1 @@
-# website
+# mathematics club website

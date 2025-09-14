@@ -2110,3 +2110,24 @@ select.form-control {
 }
 
 .navbar-logo { height: 120px; width: 120px; border-radius: 50%; object-fit: cover; margin-right: 10px; }
+
+#mission-objective {
+    background-color: black;
+    color: white; /* so text stays readable */
+    padding: 40px 20px; /* optional, for spacing */
+    border-radius: 12px; /* optional, for smooth edges */
+}
+
+#our-team-photo {
+    background-color: darkslategray; /* same grey as the cards */
+    color: white; /* make text readable */
+    padding: 40px 20px; /* spacing */
+    border-radius: 12px; /* optional */
+}
+
+#what-is-club {
+    background-color: #000000; /* pure black */
+    color: white; /* keep text visible */
+    padding: 40px 20px; /* some breathing space */
+}
+
